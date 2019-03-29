@@ -4,15 +4,15 @@ import django_filters
 from rest_framework import viewsets, generics
 from rest_framework.decorators import list_route
 
-from adjust_demo.records.filters import RecordsFilter, Ordering, GroupBy, FilterFields
+from adjust_demo.records.filters import RecordsFilter,  GroupBy, OrderingAndFilterFields
 from adjust_demo.records.models import Records
 from adjust_demo.records.serializers import RecordSerializer
 from adjust_demo.records.utils import success_response, failure_response
 
 
 class RecordsViewSet(generics.ListAPIView, viewsets.ViewSet):
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend, Ordering,
-                       GroupBy, FilterFields)
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,
+                       GroupBy, OrderingAndFilterFields)
     filter_class = RecordsFilter
     queryset = Records.objects.all()
     serializer_class = RecordSerializer
