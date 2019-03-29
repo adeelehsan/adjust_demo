@@ -45,3 +45,5 @@ cpi = spend/install. Use case: show CPI values for Canada (CA) broken down by ch
 ```
 simply hit the /records/
 ```
+### NOTES
+whenever group by and ordering are applied on different columns then for sorting dict is used instead of ORM order_by method because of the postgres limitaion.
