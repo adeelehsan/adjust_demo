@@ -8,6 +8,10 @@ Postgress database is used and following is configuration
 'USER': 'adjust',
 'PASSWORD': 'password’,
 ```
+## Add sample data to database
+```
+use managment command to add data in db. python manage.py add_data_in_db
+```
 ## How to apply grouping, filtering and ordering
 Grouping, filtering, fields and ordering can be used at same time and independently
 ```
